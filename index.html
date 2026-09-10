@@ -5,13 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دعوة حفل تكريم - معهد الإمام النووي</title>
   
-  <!-- استدعاء الخطوط -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- ربط ملف الـ CSS مع إصدار v=2 لتخطي الذاكرة المؤقتة (Cache) -->
-  <link rel="stylesheet" type="text/css" href="style.css?v=2">
+
+  <style>
+    /* التنسيقات العامة */
+    html, body {
+      background-color: #F4EBE1 !important;
+      margin: 0;
+      padding: 0;
+      font-family: 'Amiri', serif;
+      color: #5A483C;
+      direction: rtl;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* شاشة الظرف */
+    .envelope-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #F4EBE1 !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease;
+    }
+
+    .invite-subtitle {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      color: #B59B88;
+      margin-bottom: 15px;
+    }
+
+    .invite-title {
+      font-family: 'Aref Ruqaa', serif;
+      font-size: 2.5rem;
+      color: #4A3B32;
+      margin-bottom: 40px;
+    }
+
+    .envelope-wrapper {
+      cursor: pointer;
+      margin-bottom: 35px;
+    }
+
+    .envelope-body {
+      width: 270px;
+      height: 175px;
+      background: #C4AA96;
+      position: relative;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flap-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-top: 87px solid transparent;
+      border-bottom: 87px solid transparent;
+      border-left: 135px solid #B89D88;
+    }
+
+    .flap-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-top: 87px solid transparent;
+      border-bottom: 87px solid transparent;
+      border-right: 135px solid #B89D88;
+    }
+
+    .flap-bottom {
+      position: absolute;
+      bottom: 0;
+      border-left: 135px solid transparent;
+      border-right: 135px solid transparent;
+      border-bottom: 92px solid #AC907B;
+    }
+
+    .seal {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      background: #A3846C;
+      border-radius: 50%;
+      border: 2px solid #8C6F59;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+
+    .seal span {
+      color: #FFF;
+      font-family: 'Aref Ruqaa', serif;
+      font-size: 1.3rem;
+    }
+
+    .click-instruction {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.95rem;
+      color: #B59B88;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* بطاقات المحتوى */
+    .main-wrapper {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px 15px;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .page-screen {
+      background-color: #F4EBE1;
+      border: 1px solid #E6D7C8;
+      border-radius: 16px;
+      padding: 45px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .star-icon {
+      color: #C5A992;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .bottom-star {
+      margin-bottom: 0;
+      margin-top: 25px;
+    }
+
+    .main-logo {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .basmala {
+      font-size: 1.6rem;
+      color: #4A3B32;
+      margin-bottom: 25px;
+    }
+
+    .sub-heading {
+      font-size: 1.2rem;
+      color: #5A483C;
+      margin-bottom: 8px;
+    }
+
+    .institution-name {
+      font-family: 'Aref Ruqaa', serif;
+      font-size: 1.8rem;
+      color: #4A3B32;
+      margin-bottom: 4px;
+    }
+
+    .institution-sub {
+      font-size: 1rem;
+      color: #8C7565;
+      margin-bottom: 25px;
+    }
+
+    .quran-quote {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4A3B32;
+      margin-bottom: 25px;
+    }
+
+    .invitation-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #5A483C;
+      margin-bottom: 20px;
+    }
+
+    .heart-icon {
+      font-size: 1.2rem;
+      color: #C5A992;
+      margin-bottom: 10px;
+    }
+
+    .welcome-note {
+      font-size: 1.2rem;
+      color: #4A3B32;
+      font-weight: bold;
+    }
+
+    /* SAVE THE DATE */
+    .std-subtitle {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      color: #B59B88;
+      margin-bottom: 20px;
+    }
+
+    .big-day {
+      font-size: 4.5rem;
+      color: #4A3B32;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .month-year {
+      font-size: 1.5rem;
+      color: #5A483C;
+      margin-bottom: 20px;
+    }
+
+    .vertical-line {
+      width: 1px;
+      height: 40px;
+      background-color: #D3C1B1;
+      margin: 15px 0;
+    }
+
+    .day-name {
+      font-size: 1.4rem;
+      color: #4A3B32;
+      margin-bottom: 5px;
+    }
+
+    .time-text {
+      font-size: 1.3rem;
+      color: #5A483C;
+    }
+
+    .location-box {
+      margin-top: 10px;
+    }
+
+    .location-title {
+      font-size: 1.1rem;
+      color: #8C7565;
+      margin-bottom: 5px;
+    }
+
+    .location-name {
+      font-size: 1.25rem;
+      color: #4A3B32;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .map-button {
+      font-family: 'Tajawal', sans-serif;
+      display: inline-block;
+      background-color: #9E826C;
+      color: #FFFFFF !important;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .children-note {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.85rem;
+      color: #A08C7D;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,7 +322,7 @@
   <!-- المحتوى الأساسي -->
   <main id="main-content" class="main-wrapper hidden">
     
-    <!-- الصفحة الأولى: النص والترحيب -->
+    <!-- الصفحة الأولى -->
     <section class="page-screen">
       <div class="star-icon">✦</div>
       
@@ -65,7 +350,7 @@
       <div class="star-icon bottom-star">✦</div>
     </section>
 
-    <!-- الصفحة الثانية: الزمان والمكان (SAVE THE DATE) -->
+    <!-- الصفحة الثانية (SAVE THE DATE) -->
     <section class="page-screen save-the-date-screen">
       <div class="star-icon">✦</div>
       
@@ -97,7 +382,21 @@
 
   </main>
 
-  <!-- ربط ملف الـ JS مع إصدار v=2 -->
-  <script src="script.js?v=2"></script>
+  <script>
+    function openCard() {
+      const envelope = document.getElementById('envelope-screen');
+      const mainContent = document.getElementById('main-content');
+      
+      envelope.style.opacity = '0';
+      
+      setTimeout(() => {
+        envelope.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+        setTimeout(() => {
+          mainContent.style.opacity = '1';
+        }, 50);
+      }, 800);
+    }
+  </script>
 </body>
 </html>
