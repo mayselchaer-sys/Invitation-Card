@@ -2,191 +2,290 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Tajawal', sans-serif;
 }
 
 body {
-  background-color: #58111A;
-  color: #333;
+  background-color: #F4EBE1;
+  font-family: 'Amiri', serif;
+  color: #5A483C;
+  direction: rtl;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px 10px;
-  direction: rtl;
 }
 
-/* شاشة الظرف */
+/* ---------------- شاشة الظرف ---------------- */
 .envelope-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #58111A;
+  background-color: #F4EBE1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 999;
   transition: opacity 0.8s ease;
 }
 
-.envelope {
-  background: #ffffff;
-  padding: 35px 25px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-  border: 2px solid #D4AF37;
-  cursor: pointer;
-  max-width: 320px;
-  width: 85%;
-  transition: transform 0.2s;
-}
-
-.envelope:active {
-  transform: scale(0.95);
-}
-
-.envelope-logo {
-  max-width: 120px;
+.invite-subtitle {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: #B59B88;
   margin-bottom: 15px;
 }
 
-.click-text {
-  color: #58111A;
-  font-weight: bold;
-  font-size: 1.05rem;
+.invite-title {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 2.5rem;
+  color: #4A3B32;
+  margin-bottom: 40px;
+}
+
+.envelope-wrapper {
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+
+.envelope-body {
+  width: 270px;
+  height: 175px;
+  background: #C4AA96;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flap-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: 87px solid transparent;
+  border-bottom: 87px solid transparent;
+  border-left: 135px solid #B89D88;
+}
+
+.flap-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top: 87px solid transparent;
+  border-bottom: 87px solid transparent;
+  border-right: 135px solid #B89D88;
+}
+
+.flap-bottom {
+  position: absolute;
+  bottom: 0;
+  border-left: 135px solid transparent;
+  border-right: 135px solid transparent;
+  border-bottom: 92px solid #AC907B;
+}
+
+.seal {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: #A3846C;
+  border-radius: 50%;
+  border: 2px solid #8C6F59;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.seal span {
+  color: #FFF;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.3rem;
+}
+
+.click-instruction {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.95rem;
+  color: #B59B88;
 }
 
 .hidden {
   display: none !important;
 }
 
-/* بطاقة الدعوة الأساسية المقسمة */
-.card-container {
-  background: #ffffff;
+/* ---------------- محتوى الدعوة (الصفحات المتتالية) ---------------- */
+.main-wrapper {
   width: 100%;
-  max-width: 500px;
-  padding: 30px 20px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-  border: 2px solid #D4AF37;
-  text-align: center; /* سنتر الخصوصية والمحتوى بالمنتصف */
-  animation: fadeIn 0.8s ease-in-out;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 15px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* الأقسام الثلاثة */
-.card-section {
-  padding: 10px 0;
+.page-screen {
+  background-color: #F4EBE1;
+  border: 1px solid #E6D7C8;
+  border-radius: 12px;
+  padding: 45px 25px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
 }
 
-/* الفواصل بين الأقسام */
-.divider {
-  color: #D4AF37;
-  font-size: 0.9rem;
-  letter-spacing: 4px;
-  margin: 15px 0;
-  opacity: 0.8;
+/* عناصر الزينة والنجوم */
+.star-icon {
+  color: #C5A992;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
-/* القسم الأول */
+.bottom-star {
+  margin-bottom: 0;
+  margin-top: 25px;
+}
+
+/* الصفحة الأولى */
 .main-logo {
-  max-width: 110px;
-  margin-bottom: 12px;
+  max-width: 95px;
+  margin-bottom: 25px;
 }
 
 .basmala {
-  color: #58111A;
-  font-size: 1.15rem;
-  font-weight: bold;
-  margin-bottom: 12px;
+  font-family: 'Amiri', serif;
+  font-size: 1.6rem;
+  color: #4A3B32;
+  margin-bottom: 30px;
 }
 
-.quran-ayah {
-  background: #FAF4F5;
-  color: #58111A;
-  padding: 12px 15px;
-  border-radius: 10px;
-  border-right: 3px solid #58111A;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.6;
-  width: 100%;
+.sub-heading {
+  font-size: 1.25rem;
+  color: #5A483C;
+  margin-bottom: 8px;
 }
 
-/* القسم الثاني */
-.intro-text, .welcome-text {
-  color: #444;
-  font-size: 0.98rem;
-  line-height: 1.8;
-  margin-bottom: 10px;
+.institution-name {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.8rem;
+  color: #4A3B32;
+  margin-bottom: 4px;
 }
 
-/* القسم الثالث */
-.details-box {
-  background: #FAF4F5;
-  border: 1px dashed #D4AF37;
-  padding: 15px;
-  border-radius: 12px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.detail-item {
-  margin-bottom: 12px;
-}
-
-.detail-item:last-child {
-  margin-bottom: 0;
-}
-
-.detail-item strong {
-  color: #58111A;
+.institution-sub {
   font-size: 1.05rem;
-  display: block;
-  margin-bottom: 3px;
+  color: #8C7565;
+  margin-bottom: 30px;
 }
 
-.detail-item p {
-  color: #333;
-  font-size: 0.95rem;
+.quran-quote {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4A3B32;
+  margin-bottom: 30px;
+  padding: 0 10px;
 }
 
-.map-btn {
-  display: inline-block;
-  background: #58111A;
-  color: #ffffff !important;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  font-weight: bold;
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  border: 1px solid #D4AF37;
-  box-shadow: 0 4px 10px rgba(88, 17, 26, 0.25);
+.invitation-text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #5A483C;
+  margin-bottom: 25px;
 }
 
-.outro-text {
-  color: #58111A;
-  font-size: 1rem;
-  line-height: 1.6;
+.heart-icon {
+  font-size: 1.2rem;
+  color: #C5A992;
   margin-bottom: 15px;
 }
 
-.note {
-  color: #888;
+.welcome-note {
+  font-size: 1.2rem;
+  color: #4A3B32;
+  font-weight: bold;
+}
+
+/* ---------------- الصفحة الثانية (SAVE THE DATE) ---------------- */
+.std-subtitle {
+  font-family: 'Tajawal', sans-serif;
   font-size: 0.85rem;
-  border-top: 1px solid #eee;
-  padding-top: 12px;
-  width: 100%;
+  letter-spacing: 4px;
+  color: #B59B88;
+  margin-bottom: 25px;
+}
+
+.big-day {
+  font-family: 'Amiri', serif;
+  font-size: 4.2rem;
+  color: #4A3B32;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.month-year {
+  font-size: 1.5rem;
+  color: #5A483C;
+  margin-bottom: 25px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 45px;
+  background-color: #D3C1B1;
+  margin: 20px 0;
+}
+
+.day-name {
+  font-size: 1.4rem;
+  color: #4A3B32;
+  margin-bottom: 8px;
+}
+
+.time-text {
+  font-size: 1.35rem;
+  color: #5A483C;
+}
+
+.location-box {
+  margin-top: 10px;
+}
+
+.location-title {
+  font-size: 1.2rem;
+  color: #8C7565;
+  margin-bottom: 5px;
+}
+
+.location-name {
+  font-size: 1.3rem;
+  color: #4A3B32;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.map-button {
+  font-family: 'Tajawal', sans-serif;
+  display: inline-block;
+  background-color: #9E826C;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(158, 130, 108, 0.25);
+}
+
+.children-note {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.85rem;
+  color: #A08C7D;
 }
