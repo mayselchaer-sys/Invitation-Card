@@ -12,10 +12,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 20px 10px;
   direction: rtl;
 }
 
+/* شاشة الظرف */
 .envelope-screen {
   position: fixed;
   top: 0;
@@ -27,20 +28,20 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 
 .envelope {
   background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 15px;
+  padding: 35px 25px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  border: 2px solid #800020;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  border: 2px solid #D4AF37;
   cursor: pointer;
   max-width: 320px;
-  width: 90%;
-  transition: transform 0.3s;
+  width: 85%;
+  transition: transform 0.2s;
 }
 
 .envelope:active {
@@ -48,74 +49,97 @@ body {
 }
 
 .envelope-logo {
-  max-width: 130px;
-  margin-bottom: 20px;
+  max-width: 120px;
+  margin-bottom: 15px;
 }
 
 .click-text {
   color: #58111A;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .hidden {
   display: none !important;
 }
 
+/* بطاقة الدعوة الأساسية المقسمة */
 .card-container {
   background: #ffffff;
   width: 100%;
-  max-width: 550px;
-  padding: 35px 25px;
+  max-width: 500px;
+  padding: 30px 20px;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-  border: 3px solid #800020;
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
+  border: 2px solid #D4AF37;
+  text-align: center; /* سنتر الخصوصية والمحتوى بالمنتصف */
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* الأقسام الثلاثة */
+.card-section {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الفواصل بين الأقسام */
+.divider {
+  color: #D4AF37;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  margin: 15px 0;
+  opacity: 0.8;
+}
+
+/* القسم الأول */
 .main-logo {
-  max-width: 120px;
-  margin-bottom: 15px;
+  max-width: 110px;
+  margin-bottom: 12px;
 }
 
 .basmala {
   color: #58111A;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .quran-ayah {
-  background: #fcf6f7;
+  background: #FAF4F5;
   color: #58111A;
-  padding: 15px;
+  padding: 12px 15px;
   border-radius: 10px;
-  border-right: 4px solid #58111A;
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.intro-text {
-  color: #444;
+  border-right: 3px solid #58111A;
   font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 25px;
+  font-weight: bold;
+  line-height: 1.6;
+  width: 100%;
 }
 
+/* القسم الثاني */
+.intro-text, .welcome-text {
+  color: #444;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* القسم الثالث */
 .details-box {
-  background: #fcf6f7;
-  border: 1px solid #f0d5da;
-  padding: 20px;
+  background: #FAF4F5;
+  border: 1px dashed #D4AF37;
+  padding: 15px;
   border-radius: 12px;
-  margin-bottom: 25px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .detail-item {
@@ -128,14 +152,14 @@ body {
 
 .detail-item strong {
   color: #58111A;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .detail-item p {
   color: #333;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .map-btn {
@@ -143,24 +167,26 @@ body {
   background: #58111A;
   color: #ffffff !important;
   text-decoration: none;
-  padding: 12px 25px;
+  padding: 12px 24px;
   border-radius: 25px;
   font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(88, 17, 26, 0.3);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  border: 1px solid #D4AF37;
+  box-shadow: 0 4px 10px rgba(88, 17, 26, 0.25);
 }
 
 .outro-text {
   color: #58111A;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 .note {
   color: #888;
   font-size: 0.85rem;
   border-top: 1px solid #eee;
-  padding-top: 15px;
+  padding-top: 12px;
+  width: 100%;
 }
