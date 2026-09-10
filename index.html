@@ -5,63 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دعوة حفل تكريم - معهد الإمام النووي</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- غلاف الظرف الأول (عند الكبس عليه تفتح البطاقة) -->
+  <!-- شاشة الظرف الأولى -->
   <div id="envelope-screen" class="envelope-screen">
-    <div class="envelope" onclick="openCard()">
-      <img src="IMG_8887.jpeg" alt="لوجو المعهد" class="envelope-logo">
-      <p class="click-text">اضغطي هنا لفتح بطاقة الدعوة ✉️</p>
-    </div>
-  </div>
-
-  <!-- محتوى البطاقة الأساسية (مقسم لثلاثة أقسام بالمنتصف) -->
-  <main id="main-content" class="card-container hidden">
+    <p class="invite-subtitle">YOU ARE INVITED</p>
+    <h1 class="invite-title">دعوة حضور</h1>
     
-    <!-- القسم الأول: الترويسة واللوجو والآية -->
-    <section class="card-section section-one">
-      <img src="IMG_8887.jpeg" alt="لوجو المعهد" class="main-logo">
-      <p class="basmala">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</p>
-      <blockquote class="quran-ayah">
-        ﴿يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ﴾
-      </blockquote>
-    </section>
-
-    <div class="divider">✦ ✦ ✦</div>
-
-    <!-- القسم الثاني: نص الدعوة والترحيب -->
-    <section class="card-section section-two">
-      <p class="intro-text">
-        يتشرف <strong>معهد الإمام النووي الشرعي</strong> التابع لوقف (مرشد)، بدعوتكم لحضور حفل بهيج، نبتغي فيه تكريم كوكبة من الأخوات الداعيات اللواتي أتممن مسيرتهن في طلب العلم الشرعي.
-      </p>
-      <p class="welcome-text">
-        يسعدنا حضوركم وتشريفكم لنشارك معاً فرحة الثمر وجني العطاء، ونحتفي بجهود مباركة في مسيرة العلم والدعوة.
-      </p>
-    </section>
-
-    <div class="divider">✦ ✦ ✦</div>
-
-    <!-- القسم الثالث: الزمان والمكان ورابط الخريطة -->
-    <section class="card-section section-three">
-      <div class="details-box">
-        <div class="detail-item">
-          <strong>📅 الزمان</strong>
-          <p>يوم الاثنين، 21 تموز - الساعة 4:30 عصراً</p>
-        </div>
-        <div class="detail-item">
-          <strong>📍 المكان</strong>
-          <p>قاعة البلدية - ساحة النجمة</p>
+    <div class="envelope-wrapper" onclick="openCard()">
+      <div class="envelope-body">
+        <div class="flap-left"></div>
+        <div class="flap-right"></div>
+        <div class="flap-bottom"></div>
+        <div class="seal">
+          <span>ن</span>
         </div>
       </div>
+    </div>
 
-      <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x151b9911c89df2cb:0x34d55fd9f7268097?entry=s&sa=X&ved=2ahUKEwj6g93mt-SWAxUkRv4FHUXQNNQQ4kB6BAgYEAA&hl=en" target="_blank" class="map-btn">
-        📍 موقع القاعة على الخريطة
+    <p class="click-instruction">اضغطي على الظرف لفتح الدعوة</p>
+  </div>
+
+  <!-- المحتوى الأساسي (يظهر بعد الفتح) -->
+  <main id="main-content" class="main-wrapper hidden">
+    
+    <!-- الشاشة الأولى: النص والترحيب (طراز الصورة الأولى) -->
+    <section class="page-screen">
+      <div class="star-icon">✦</div>
+      
+      <img src="IMG_8887.jpeg" alt="لوجو المعهد" class="main-logo">
+      
+      <p class="basmala">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</p>
+      
+      <p class="sub-heading">بكل الفخر والاعتزاز،</p>
+      
+      <h2 class="institution-name">يتشرف معهد الإمام النووي الشرعي</h2>
+      <p class="institution-sub">التابع لوقف (مرشد)</p>
+      
+      <p class="quran-quote">
+        ﴿يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ﴾
+      </p>
+
+      <p class="invitation-text">
+        بدعوتكم لحضور حفل تكريم كوكبة من الأخوات الداعيات اللواتي أتممن مسيرتهن المباركة في طلب العلم الشرعي.
+      </p>
+
+      <div class="heart-icon">🤍</div>
+
+      <p class="welcome-note">حضوركم يسعدنا ويتمم فرحتنا</p>
+      
+      <div class="star-icon bottom-star">✦</div>
+    </section>
+
+    <!-- الشاشة الثانية: الزمان والمكان (طراز الصورة الثانية SAVE THE DATE) -->
+    <section class="page-screen save-the-date-screen">
+      <div class="star-icon">✦</div>
+      
+      <p class="std-subtitle">SAVE THE DATE</p>
+      
+      <div class="big-day">21</div>
+      <p class="month-year">تموز 2026</p>
+      
+      <div class="vertical-line"></div>
+      
+      <p class="day-name">يوم الاثنين</p>
+      <p class="time-text">الساعة 4:30 عصراً</p>
+      
+      <div class="vertical-line"></div>
+      
+      <div class="location-box">
+        <p class="location-title">📍 المكان</p>
+        <p class="location-name">قاعة البلدية - ساحة النجمة</p>
+      </div>
+
+      <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x151b9911c89df2cb:0x34d55fd9f7268097?entry=s&sa=X&ved=2ahUKEwj6g93mt-SWAxUkRv4FHUXQNNQQ4kB6BAgYEAA&hl=en" target="_blank" class="map-button">
+        موقع القاعة على الخريطة
       </a>
 
-      <p class="outro-text">حضوركم دعم لمسيرة العلم والقرآن، وفخر لداعيات الغد.<br><strong>أهلاً وسهلاً بكم</strong></p>
-      <p class="note">⚠️ ملاحظة: يرجى عدم اصطحاب الأطفال.</p>
+      <p class="children-note">يرجى عدم اصطحاب الأطفال</p>
+
+      <div class="star-icon bottom-star">✦</div>
     </section>
 
   </main>
