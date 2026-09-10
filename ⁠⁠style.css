@@ -1,34 +1,32 @@
-* {
-  box-sizing: border-box;
+html, body {
+  background-color: #F4EBE1 !important;
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-color: #F4EBE1;
   font-family: 'Amiri', serif;
   color: #5A483C;
   direction: rtl;
+}
+
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-/* ---------------- شاشة الظرف ---------------- */
+/* شاشة الظرف */
 .envelope-screen {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #F4EBE1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F4EBE1 !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 999;
-  transition: opacity 0.8s ease;
+  z-index: 9999;
 }
 
 .invite-subtitle {
@@ -57,7 +55,7 @@ body {
   background: #C4AA96;
   position: relative;
   border-radius: 4px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,10 +117,10 @@ body {
   display: none !important;
 }
 
-/* ---------------- محتوى الدعوة (الصفحات المتتالية) ---------------- */
+/* بطاقات المحتوى */
 .main-wrapper {
   width: 100%;
-  max-width: 450px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -132,17 +130,15 @@ body {
 .page-screen {
   background-color: #F4EBE1;
   border: 1px solid #E6D7C8;
-  border-radius: 12px;
-  padding: 45px 25px;
+  border-radius: 16px;
+  padding: 45px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 
-/* عناصر الزينة والنجوم */
 .star-icon {
   color: #C5A992;
   font-size: 1.2rem;
@@ -154,21 +150,19 @@ body {
   margin-top: 25px;
 }
 
-/* الصفحة الأولى */
 .main-logo {
-  max-width: 95px;
-  margin-bottom: 25px;
+  max-width: 100px;
+  margin-bottom: 20px;
 }
 
 .basmala {
-  font-family: 'Amiri', serif;
   font-size: 1.6rem;
   color: #4A3B32;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .sub-heading {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #5A483C;
   margin-bottom: 8px;
 }
@@ -181,30 +175,29 @@ body {
 }
 
 .institution-sub {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #8C7565;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .quran-quote {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #4A3B32;
-  margin-bottom: 30px;
-  padding: 0 10px;
+  margin-bottom: 25px;
 }
 
 .invitation-text {
-  font-size: 1.2rem;
-  line-height: 1.9;
+  font-size: 1.15rem;
+  line-height: 1.8;
   color: #5A483C;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .heart-icon {
   font-size: 1.2rem;
   color: #C5A992;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .welcome-note {
@@ -213,18 +206,17 @@ body {
   font-weight: bold;
 }
 
-/* ---------------- الصفحة الثانية (SAVE THE DATE) ---------------- */
+/* SAVE THE DATE */
 .std-subtitle {
   font-family: 'Tajawal', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 4px;
   color: #B59B88;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .big-day {
-  font-family: 'Amiri', serif;
-  font-size: 4.2rem;
+  font-size: 4.5rem;
   color: #4A3B32;
   line-height: 1;
   margin-bottom: 5px;
@@ -233,24 +225,24 @@ body {
 .month-year {
   font-size: 1.5rem;
   color: #5A483C;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .vertical-line {
   width: 1px;
-  height: 45px;
+  height: 40px;
   background-color: #D3C1B1;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .day-name {
   font-size: 1.4rem;
   color: #4A3B32;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .time-text {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: #5A483C;
 }
 
@@ -259,16 +251,16 @@ body {
 }
 
 .location-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #8C7565;
   margin-bottom: 5px;
 }
 
 .location-name {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #4A3B32;
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .map-button {
@@ -277,11 +269,10 @@ body {
   background-color: #9E826C;
   color: #FFFFFF !important;
   text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(158, 130, 108, 0.25);
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
 .children-note {
