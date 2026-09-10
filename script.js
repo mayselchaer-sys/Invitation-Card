@@ -1,10 +1,14 @@
 function openCard() {
-  const envelopeScreen = document.getElementById('envelope-screen');
+  const envelope = document.getElementById('envelope-screen');
   const mainContent = document.getElementById('main-content');
   
-  envelopeScreen.style.opacity = '0';
+  // تأثير اختفاء الظرف
+  envelope.style.opacity = '0';
+  
   setTimeout(() => {
-    envelopeScreen.style.display = 'none';
+    envelope.classList.add('hidden');
     mainContent.classList.remove('hidden');
+    // إظهار المحتوى بسلاسة
+    mainContent.style.opacity = '1';
   }, 800);
 }
