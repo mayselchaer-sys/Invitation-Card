@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دعوة حفل تكريم - معهد الإمام النووي</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- غلاف الظرف -->
+  <div id="envelope-screen" class="envelope-screen">
+    <div class="envelope" onclick="openCard()">
+      <img src="logo.png" alt="لوجو المعهد" class="envelope-logo">
+      <p class="click-text">اضغطي لفتح بطاقة الدعوة</p>
+    </div>
+  </div>
+
+  <!-- محتوى الدعوة -->
+  <main id="main-content" class="hidden">
+    
+    <div class="card-container">
+      <img src="logo.png" alt="لوجو المعهد" class="main-logo">
+      
+      <p class="basmala">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</p>
+      
+      <blockquote class="quran-ayah">
+        ﴿يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ﴾
+      </blockquote>
+
+      <section class="intro-text">
+        <p>يتشرف <strong>معهد الإمام النووي الشرعي</strong> التابع لوقف (مرشد)، بدعوتكم لحضور حفل بهيج، نبتغي فيه تكريم كوكبة من الأخوات الداعيات، اللواتي أتممن مسيرتهن في طلب العلم الشرعي.</p>
+        <p>يسعدنا حضوركم وتشريفكم، لنشارك معا فرحة الثمر وجني العطاء، ونحتفي بجهود مباركة في مسيرة العلم والدعوة.</p>
+      </section>
+
+      <!-- تفاصيل الموعد والمكان -->
+      <section class="details-box">
+        <div class="detail-item">
+          <strong>📅 الزمان:</strong>
+          <p>يوم الاثنين، 21 تموز - الساعة 4:30 عصراً</p>
+        </div>
+        <div class="detail-item">
+          <strong>📍 المكان:</strong>
+          <p>قاعة البلدية - ساحة النجمة</p>
+        </div>
+      </section>
+
+      <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x151b9911c89df2cb:0x34d55fd9f7268097?entry=s&sa=X&ved=2ahUKEwj6g93mt-SWAxUkRv4FHUXQNNQQ4kB6BAgYEAA&hl=en" target="_blank" class="map-btn">
+        📍 موقع القاعة على الخريطة
+      </a>
+
+      <p class="outro-text">حضوركم دعم لمسيرة العلم والقرآن، وفخر لداعيات الغد.<br><strong>أهلاً وسهلاً بكم</strong></p>
+
+      <p class="note">⚠️ ملاحظة: يرجى عدم اصطحاب الأطفال.</p>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
