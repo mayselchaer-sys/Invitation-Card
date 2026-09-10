@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دعوة حفل تكريم - معهد الإمام النووي</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- إضافة v=2 تضمن تحميل التصميم الجديد فوراً دون انتظار -->
+  <link rel="stylesheet" href="style.css?v=2">
   <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- شاشة الظرف الأولى -->
+  <!-- شاشة الظرف الأولى (ستكون الظاهرة فقط في البداية) -->
   <div id="envelope-screen" class="envelope-screen">
     <p class="invite-subtitle">YOU ARE INVITED</p>
     <h1 class="invite-title">دعوة حضور</h1>
@@ -28,10 +29,10 @@
     <p class="click-instruction">اضغطي على الظرف لفتح الدعوة</p>
   </div>
 
-  <!-- المحتوى الأساسي (يظهر بعد الفتح) -->
+  <!-- المحتوى الأساسي (يظهر بعد فتح الظرف) -->
   <main id="main-content" class="main-wrapper hidden">
     
-    <!-- الشاشة الأولى: النص والترحيب (طراز الصورة الأولى) -->
+    <!-- الصفحة الأولى: النص والترحيب (مثل الصورة الأولى) -->
     <section class="page-screen">
       <div class="star-icon">✦</div>
       
@@ -59,7 +60,7 @@
       <div class="star-icon bottom-star">✦</div>
     </section>
 
-    <!-- الشاشة الثانية: الزمان والمكان (طراز الصورة الثانية SAVE THE DATE) -->
+    <!-- الصفحة الثانية: الزمان والمكان منفصلة (مثل الصورة الثانية SAVE THE DATE) -->
     <section class="page-screen save-the-date-screen">
       <div class="star-icon">✦</div>
       
@@ -91,7 +92,6 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
-
