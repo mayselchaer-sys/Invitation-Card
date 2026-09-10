@@ -1,16 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دعوة حفل تكريم - معهد الإمام النووي</title>
-  <!-- إضافة v=2 تضمن تحميل التصميم الجديد فوراً دون انتظار -->
-  <link rel="stylesheet" href="style.css?v=2">
-  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- استدعاء الخطوط -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- ربط ملف الـ CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-  <!-- شاشة الظرف الأولى (ستكون الظاهرة فقط في البداية) -->
+  <!-- شاشة الظرف الأولى -->
   <div id="envelope-screen" class="envelope-screen">
     <p class="invite-subtitle">YOU ARE INVITED</p>
     <h1 class="invite-title">دعوة حضور</h1>
@@ -29,10 +35,10 @@
     <p class="click-instruction">اضغطي على الظرف لفتح الدعوة</p>
   </div>
 
-  <!-- المحتوى الأساسي (يظهر بعد فتح الظرف) -->
+  <!-- المحتوى الأساسي -->
   <main id="main-content" class="main-wrapper hidden">
     
-    <!-- الصفحة الأولى: النص والترحيب (مثل الصورة الأولى) -->
+    <!-- الصفحة الأولى -->
     <section class="page-screen">
       <div class="star-icon">✦</div>
       
@@ -60,7 +66,7 @@
       <div class="star-icon bottom-star">✦</div>
     </section>
 
-    <!-- الصفحة الثانية: الزمان والمكان منفصلة (مثل الصورة الثانية SAVE THE DATE) -->
+    <!-- الصفحة الثانية (SAVE THE DATE) -->
     <section class="page-screen save-the-date-screen">
       <div class="star-icon">✦</div>
       
@@ -92,6 +98,6 @@
 
   </main>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js"></script>
 </body>
 </html>
