@@ -99,24 +99,27 @@
       border-bottom: 92px solid #AC907B;
     }
 
+    /* ختم لوجو المعهد الدائري على الظرف */
     .seal {
       position: absolute;
-      width: 52px;
-      height: 52px;
-      background: #A3846C;
+      width: 60px;
+      height: 60px;
+      background: #F4EBE1;
       border-radius: 50%;
-      border: 2px solid #8C6F59;
+      border: 3px solid #8C6F59;
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       z-index: 10;
+      overflow: hidden;
     }
 
-    .seal span {
-      color: #FFF;
-      font-family: 'Aref Ruqaa', serif;
-      font-size: 1.3rem;
+    .seal img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
     }
 
     .click-instruction {
@@ -164,8 +167,10 @@
     }
 
     .main-logo {
-      max-width: 100px;
+      max-width: 150px;
+      height: auto;
       margin-bottom: 20px;
+      mix-blend-mode: multiply;
     }
 
     .basmala {
@@ -292,10 +297,74 @@
       font-size: 0.85rem;
       color: #A08C7D;
     }
+
+    /* تنسيقات نموذج تأكيد الحضور */
+    .rsvp-section {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .rsvp-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 15px;
+      font-family: 'Tajawal', sans-serif;
+      text-align: right;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      color: #5A483C;
+      font-weight: 500;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #D3C1B1;
+      border-radius: 10px;
+      background-color: #FFFFFF;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 0.95rem;
+      color: #4A3B32;
+      box-sizing: border-radius;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: #9E826C;
+    }
+
+    .submit-btn {
+      background-color: #9E826C;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 25px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #8C6F59;
+    }
   </style>
 </head>
 <body>
 
+  <!-- شاشة الظرف -->
   <div id="envelope-screen" class="envelope-screen">
     <p class="invite-subtitle">YOU ARE INVITED</p>
     <h1 class="invite-title">دعوة حضور</h1>
@@ -305,8 +374,9 @@
         <div class="flap-left"></div>
         <div class="flap-right"></div>
         <div class="flap-bottom"></div>
+        <!-- اللوجو الدائري المضاف كالختم -->
         <div class="seal">
-          <span>ن</span>
+          <img src="IMG_8887.jpeg" alt="لوجو المعهد">
         </div>
       </div>
     </div>
@@ -314,8 +384,10 @@
     <p class="click-instruction">اضغطي على الظرف لفتح الدعوة</p>
   </div>
 
+  <!-- المحتوى الرئيسي -->
   <main id="main-content" class="main-wrapper hidden">
     
+    <!-- القسم الأول: الدعوة -->
     <section class="page-screen">
       <div class="star-icon">✦</div>
       
@@ -343,13 +415,14 @@
       <div class="star-icon bottom-star">✦</div>
     </section>
 
+    <!-- القسم الثاني: Save The Date -->
     <section class="page-screen save-the-date-screen">
       <div class="star-icon">✦</div>
       
       <p class="std-subtitle">SAVE THE DATE</p>
       
       <div class="big-day">21</div>
-      <p class="month-year">تموز 2026</p>
+      <p class="month-year">أيلول 2026</p>
       
       <div class="vertical-line"></div>
       
@@ -372,6 +445,40 @@
       <div class="star-icon bottom-star">✦</div>
     </section>
 
+    <!-- القسم الثالث: تأكيد الحضور (RSVP) -->
+    <section class="page-screen rsvp-section">
+      <div class="star-icon">✦</div>
+      
+      <h2 class="institution-name" style="font-size: 1.6rem;">شاركوا الخريجات فرحتهن</h2>
+      <p class="invitation-text" style="font-size: 1rem; margin-bottom: 15px;">
+        حضوركم يكتمل به أُنسنا، يرجى تأكيد الحضور وترك كلمة طيبة للخريجات المكرمات.
+      </p>
+
+      <form class="rsvp-form" onsubmit="handleRSVP(event)">
+        <div class="form-group">
+          <label>الاسم الكريم</label>
+          <input type="text" class="form-input" placeholder="أدخلي اسمكِ هنا" required>
+        </div>
+
+        <div class="form-group">
+          <label>تأكيد الحضور</label>
+          <select class="form-select" required>
+            <option value="yes">نعم، سأحضر بإذن الله 🤍</option>
+            <option value="no">أعتذر عن الحضور</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>كلمة طيبة للخريجات</label>
+          <textarea class="form-textarea" rows="3" placeholder="اكتبي مباركة أو كلمة طيبة للداعيات المكرمات..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال التأكيد 🤍</button>
+      </form>
+
+      <div class="star-icon bottom-star">✦</div>
+    </section>
+
   </main>
 
   <script>
@@ -388,6 +495,11 @@
           mainContent.style.opacity = '1';
         }, 50);
       }, 800);
+    }
+
+    function handleRSVP(e) {
+      e.preventDefault();
+      alert('شكراً لكِ! تم تسجيل تأكيد حضوركِ ورسالتكِ بنجاح 🤍');
     }
   </script>
 </body>
